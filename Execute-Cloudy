@@ -1,0 +1,5 @@
+                string luaCode = await webView21.ExecuteScriptAsync("window.editor.getValue();");
+                luaCode = luaCode.Trim('"'); // Clean up quotes
+                CoreFunctions.ExecuteScript(luaCode);
+
+// IF YOU GET ERROR AT AWAIT PUT "async" BEFORE "void" EXAMPLE : private async void Button1_Click(object sender, EventArgs e)
