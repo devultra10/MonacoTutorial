@@ -1,0 +1,14 @@
+// THIS CAN BE USED FOR ANY API
+// YOU NEED A LISTBOX
+            listBox1.Items.Clear();
+
+            if (Directory.Exists(ScriptsDirectory))
+            {
+                var files = Directory.GetFiles(ScriptsDirectory)
+                                     .Where(file => file.EndsWith(".lua") || file.EndsWith(".txt"))
+                                     .Select(Path.GetFileName);
+                listBox1.Items.AddRange(files.ToArray());
+            }
+            else
+            {
+                MessageBox.Show($"The directory {ScriptsDirectory} does not exist.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
