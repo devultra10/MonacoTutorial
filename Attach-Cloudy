@@ -1,0 +1,2 @@
+// CXAPI
+cxapi.CoreFunctions.Inject();
