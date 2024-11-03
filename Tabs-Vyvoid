@@ -1,5 +1,5 @@
 // CREDIT TO VYVOID
-// YOU NEED InputDialog.cs Forms AND YOU NEED txtInput Textbox !
+// YOU NEED InputDialog.cs Forms AND YOU NEED txtInput Textbox AND YOU NEED VISUAL TAB CONTROL
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
