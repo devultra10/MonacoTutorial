@@ -1,0 +1,13 @@
+// THIS CAN BE USED WITH ANY API
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+            {
+                saveFileDialog.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        // Get the content from the Monaco editor
+                        string content = await webView21.ExecuteScriptAsync("window.editor.getValue();");
+                        content = content.Trim('"'); 
+
+                        File.WriteAllText(saveFileDialog.FileName, content);
