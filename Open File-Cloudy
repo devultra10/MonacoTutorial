@@ -1,0 +1,13 @@
+// CXAPI
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "Lua files (*.lua)|*.lua|Text files (*.txt)|*.txt|All files (*.*)|*.*";
+                openFileDialog.Multiselect = true;
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    foreach (string file in openFileDialog.FileNames)
+                    {
+                        try
+                        {
+                            string fileContent = File.ReadAllText(file);
+                            webView21.ExecuteScriptAsync($"window.editor.setValue(`{fileContent}`);");
